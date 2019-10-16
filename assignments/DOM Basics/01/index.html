@@ -1,16 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>DOM Basics</title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>DOM Basics</title>
+  <style>
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 1rem;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6 {
+      border: 1px solid tomato;
+    }
+
+    .lists {
+      list-style-type: none;
+    }
+
+    .li-lists {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  </style>
+</head>
+
+<body>
+
   <body>
-    <body>
-      <h1>Document Object Model</h1>
+    <h1>Document Object Model</h1>
+    <div class="wrapper">
+      <div class="box1">
+        <ul>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+          <li>four</li>
+        </ul>
+      </div>
+      <div class="box2">
+        <ul>
+          <li>one</li>
+          <li>two</li>
+          <li>three</li>
+          <li>four</li>
+        </ul>
+      </div>
+      <div class="box3">
+        <ul></ul>
+      </div>
+      <div class="box4">
+        <button class="btn-click">Click Me!!!</button>
+      </div>
+      <div class="box5">
+        <span class="counter" style="display:block;">0</span>
+        <button class="inc">Increment</button>
+        <button class="dec">Decrement</button>
+        <button class="res">Reset</button>
+        <button class="increment">inc+</button>
+      </div>
+      <div class="box6">
+        <h1>Pratice Input</h1>
+        <input class="input" type="text">
+        <button class="submit">Submit</button>
+        <ul class="lists"></ul>
+      </div>
+
+    </div>
     <script>
       // your code goes here
+      //box-1      
+      var firstLi = document.querySelector('.box1 > ul > li');
+      firstLi.style.fontSize = "2rem";
+      firstLi.style.color = "tomato";
+      firstLi.className = "bigger__font";
+      firstLi.classList.add('first');
+      firstLi.classList.remove('first');
+      firstLi.id = "main";
+      //myPara.setAttribute("id", "id_you_like");
+      //myPara.id = ID;
+      //Element.setAttribute(name, value);
+
+      //box-2
+      var box2li = document.querySelectorAll('.box2 li');
+      box2li.forEach(el => {
+        el.style.fontSize = "2rem";
+        el.style.color = "tomato";
+        el.className = "bigger__font";
+        el.classList.add('first');
+        el.classList.remove('first');
+        el.setAttribute("id", "box2__li");
+      })
+
+      //box-3
+      var box3ul = document.querySelector('.box3 > ul');
+      var createdLi = document.createElement('li');
+      createdLi.innerText = "one";
+      box3ul.append(createdLi);
+      ["One", "Two", "Three", "Four"].forEach(val => {
+        var box3ul = document.querySelector('.box3 > ul');
+        var createdLi = document.createElement('li');
+        createdLi.innerText = val;
+        box3ul.append(createdLi);
+
+      })
+
+      //box4
+      var buttonToClick = document.querySelector('.btn-click');
+      buttonToClick.addEventListener('click', e => {
+        console.log('Click');
+      })
+
+
+      //box5
+      var increment = document.querySelector('.inc');
+      var decrement = document.querySelector('.dec');
+      var reset = document.querySelector('.res');
+      var counter = document.querySelector('.counter');
+      let count = 0;
+      increment.addEventListener('click', e => {
+        counter.innerText = ++count;
+      })
+      decrement.addEventListener('click', e => {
+        counter.innerText = --count;
+      })
+      reset.addEventListener('click', e => {
+        counter.innerText = 0;
+      })
+
+      //box6
+      var submit = document.querySelector('.submit');
+      var input = document.querySelector('.input');
+      var ul = document.querySelector('.lists');
+      input.addEventListener("keyup", (e) => {
+        if(e.keyCode == 13) {
+          const checkBox = document.createElement(input.type = "checkbox");
+          const span = document.createElement('span');
+          const li = document.createElement('li');
+          li.innerText = input.value;
+          ul.classList.add('li-lists');
+          li.append(checkBox);
+          li.append(span);
+          ul.classList.add('lists');
+          ul.append(li);
+          input.value = "";
+          //span
+          span.innerText = "X";
+        }
+      })
+
     </script>
   </body>
+
 </html>

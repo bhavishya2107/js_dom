@@ -22,6 +22,19 @@
         margin: 5px;
         border: 1px solid #dedede;
       }
+
+      .demo-class {
+        border: 2px solid orange;
+      }
+
+      .article {
+        border: 2px solid blue;
+      }
+
+      .last {
+        border: 1px solid green;
+      }
+
     </style>
   </head>
 
@@ -45,8 +58,38 @@
     <h2>Query Selector All</h2>
     <div class="demo-query-all">Access me by query all (1)</div>
     <div class="demo-query-all">Access me by query all (2)</div>
+
+    <!-- 
+Use the below instruction and solve it using `index.html` file. Write JavaScript in the `script` tag.
+
+1. Select the element with an id of `demo` and apply style `1px solid purple` on that.
+2. Select all the elements by class name of `demo` and apply the style `1px solid orange` to each element.
+3. Select all the elements by tag name of `article` and apply this style `1px solid blue`.  
+4. Select the element by id of `demo-query` using querySelector and apply style of `1px solid grey`.
+5. Select the element by class of `demo-query-all` using querySelectorAll and apply style of `1px solid green`. -->
     <script>
       // your code goes here
+      var selectDivWithId = document.querySelector('#demo');
+      selectDivWithId.style.border = "2px solid purple";
+
+      // var selectAllDiv = document.querySelectorAll('.demo');
+      // selectAllDiv.classList.add("demo-class");
+
+      // var selectArticleTags = document.querySelectorAll('article');
+      // selectArticleTags.classList.add('article');
+
+      var demoQuery = document.querySelector('#demo-query');
+      demoQuery.style.border = "2px solid grey";
+
+      var demoQueryAll = document.querySelectorAll('.demo-query-all')[0];
+      var demoQueryAll_1 = document.querySelectorAll('.demo-query-all')[1];
+      // demoQueryAll.classList.add('last');
+      demoQueryAll.style.border = "2px solid grey";
+      demoQueryAll_1.style.border = "2px solid grey";
     </script>
   </body>
 </html>
+
+
+
+

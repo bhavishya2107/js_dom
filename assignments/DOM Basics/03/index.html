@@ -29,7 +29,7 @@
     <h2>Types of Sharks</h2>
     <ul>
       <li>Hammerhead</li>
-      <li>Tiger</li>
+      <li id="tiger">Tiger</li>
       <li>Great White</li>
     </ul>
   </body>
@@ -39,5 +39,20 @@
     const p = document.getElementsByTagName("p")[0];
     const ul = document.getElementsByTagName("ul")[0];
     // Your code goes here
+    var changeFirstLi = document.querySelector('ul');
+    changeFirstLi.firstElementChild.style.backgroundColor = "lightgreen"
+//2
+    var AllListInUL = document.querySelectorAll('li');
+    AllListInUL.forEach((color)=>{
+      color.style.backgroundColor = "lightgreen";
+    })
+//3
+    changeFirstLi.lastElementChild.style.border="1px black solid";
+    changeFirstLi.lastElementChild.style.backgroundColor="lightblue";
+//5
+    var middleElement = document.querySelector('#tiger');
+    middleElement.nextSibling.style.backgroundColor = "coral";
+    middleElement.previousSibling.style.backgroundColor = "aquamarine";
+
   </script>
 </html>
