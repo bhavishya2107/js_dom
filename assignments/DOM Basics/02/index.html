@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Accessing Elements in the DOM</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-      html {
-        font-family: sans-serif;
-        color: #333;
-      }
-      body {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 0 15px;
-      }
-      div,
-      article {
-        padding: 10px;
-        margin: 5px;
-        border: 1px solid #dedede;
-      }
+  <title>Accessing Elements in the DOM</title>
 
-      .demo-class {
-        border: 2px solid orange;
-      }
+  <style>
+    html {
+      font-family: sans-serif;
+      color: #333;
+    }
 
-      .article {
-        border: 2px solid blue;
-      }
+    body {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
 
-      .last {
-        border: 1px solid green;
-      }
+    div,
+    article {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #dedede;
+    }
 
-    </style>
-  </head>
+    .demo-class {
+      border: 1px solid orange;
+    }
 
-  <body>
-    <h1>Accessing Elements in the DOM</h1>
+    .article {
+      border: 1px solid blue;
+    }
 
-    <h2>ID (#demo)</h2>
-    <div id="demo">Access me by ID</div>
+    .last {
+      border: 1px solid green;
+    }
+    
+  </style>
+</head>
 
-    <h2>Class (.demo)</h2>
-    <div class="demo">Access me by class (1)</div>
-    <div class="demo">Access me by class (2)</div>
+<body>
+  <h1>Accessing Elements in the DOM</h1>
 
-    <h2>Tag (article)</h2>
-    <article>Access me by tag (1)</article>
-    <article>Access me by tag (2)</article>
+  <h2>ID (#demo)</h2>
+  <div id="demo">Access me by ID</div>
 
-    <h2>Query Selector</h2>
-    <div id="demo-query">Access me by query</div>
+  <h2>Class (.demo)</h2>
+  <div class="demo">Access me by class (1)</div>
+  <div class="demo">Access me by class (2)</div>
 
-    <h2>Query Selector All</h2>
-    <div class="demo-query-all">Access me by query all (1)</div>
-    <div class="demo-query-all">Access me by query all (2)</div>
+  <h2>Tag (article)</h2>
+  <article>Access me by tag (1)</article>
+  <article>Access me by tag (2)</article>
 
-    <!-- 
+  <h2>Query Selector</h2>
+  <div id="demo-query">Access me by query</div>
+
+  <h2>Query Selector All</h2>
+  <div class="demo-query-all">Access me by query all (1)</div>
+  <div class="demo-query-all">Access me by query all (2)</div>
+
+  <!-- 
 Use the below instruction and solve it using `index.html` file. Write JavaScript in the `script` tag.
 
 1. Select the element with an id of `demo` and apply style `1px solid purple` on that.
@@ -67,29 +70,34 @@ Use the below instruction and solve it using `index.html` file. Write JavaScript
 3. Select all the elements by tag name of `article` and apply this style `1px solid blue`.  
 4. Select the element by id of `demo-query` using querySelector and apply style of `1px solid grey`.
 5. Select the element by class of `demo-query-all` using querySelectorAll and apply style of `1px solid green`. -->
-    <script>
-      // your code goes here
-      var selectDivWithId = document.querySelector('#demo');
-      selectDivWithId.style.border = "2px solid purple";
+  <script>
+    // your code goes here
+    var selectDivWithId = document.querySelector('#demo');
+    selectDivWithId.style.border = "1px solid purple";
 
-      // var selectAllDiv = document.querySelectorAll('.demo');
-      // selectAllDiv.classList.add("demo-class");
+    var selectAllDiv = document.querySelectorAll('.demo');
+    selectAllDiv.forEach((div)=>{
+      div.classList.add("demo-class");
+    })
 
-      // var selectArticleTags = document.querySelectorAll('article');
-      // selectArticleTags.classList.add('article');
+    var selectArticleTags = document.querySelectorAll('article');
+    selectArticleTags.forEach((item)=>{
+      item.classList.add("article");
+    })
 
-      var demoQuery = document.querySelector('#demo-query');
-      demoQuery.style.border = "2px solid grey";
+    var demoQuery = document.querySelector('#demo-query');
+    demoQuery.style.border = "1px solid grey";
 
-      var demoQueryAll = document.querySelectorAll('.demo-query-all')[0];
-      var demoQueryAll_1 = document.querySelectorAll('.demo-query-all')[1];
-      // demoQueryAll.classList.add('last');
-      demoQueryAll.style.border = "2px solid grey";
-      demoQueryAll_1.style.border = "2px solid grey";
-    </script>
-  </body>
+    // var demoQueryAll = document.querySelectorAll('.demo-query-all')[0];
+    // var demoQueryAll_1 = document.querySelectorAll('.demo-query-all')[1];
+    // // demoQueryAll.classList.add('last');
+    // demoQueryAll.style.border = "2px solid grey";
+    // demoQueryAll_1.style.border = "2px solid grey";
+    var demoQueryAll = document.querySelectorAll('.demo-query-all');
+    demoQueryAll.forEach((el)=>{
+      el.style.border = "1px solid green"
+    })
+  </script>
+</body>
+
 </html>
-
-
-
-

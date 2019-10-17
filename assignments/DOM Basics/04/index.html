@@ -14,11 +14,15 @@
     </ul>
     <script>
       document.body.style.fontFamily = "Arial, sans-serif";
+      
       var toReplaceWith = document.createElement('p');
+
       toReplaceWith.innerHTML = "this is replaced info.";
+
       var toReplace = document.querySelectorAll('span');
+
       toReplace.forEach((el)=>{
-        toReplace.replaceWith(toReplaceWith);
+        el.parentNode.replaceWith(span, toReplaceWith);
         el.innerText="this is replaced info.";
       })
       
