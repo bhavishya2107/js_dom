@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>About Me</title>
-  </head>
-  <body>
-    <h1>About Me</h1>
 
-    <ul>
-      <li>Nickname: <span id="nickname"></span></li>
-      <li>Favorites: <span id="favorites"></span></li>
-      <li>Hometown: <span id="hometown"></span></li>
-    </ul>
-    <script>
-      document.body.style.fontFamily = "Arial, sans-serif";
-      
-      var toReplaceWith = document.createElement('p');
+<head>
+  <meta charset="utf-8" />
+  <title>About Me</title>
+  <style>
+    .listitem {
+      color: red;
+    }
+  </style>
+</head>
 
-      toReplaceWith.innerHTML = "this is replaced info.";
+<body>
+  <h1>About Me</h1>
 
-      var toReplace = document.querySelectorAll('span');
+  <ul>
+    <li>Nickname: <span id="nickname"></span></li>
+    <li>Favorites: <span id="favorites"></span></li>
+    <li>Hometown: <span id="hometown"></span></li>
+  </ul>
+  <script>
+    // 1.
+    document.body.style.fontFamily = "Arial, sans-serif";
+    // 3.
+    var ul = document.querySelector('ul');
+    ul.firstElementChild.firstElementChild.innerText = "Lionel Messi";
+    ul.firstElementChild.nextElementSibling.firstElementChild.innerText = "Football";
+    ul.lastElementChild.firstElementChild.innerText  = "Rosario, Argentina";
+    // 4.
+    var li = document.querySelectorAll('li');
+    li.forEach((listItem) => {
+      listItem.className = "listitem"
+    })
+    // 5.
+    var myImg = document.createElement('img');
+    myImg.src = 'https://avatars2.githubusercontent.com/u/22442931?s=460&v=4';
+    myImg.title = 'Bhavishya Negi'
+    document.querySelector('body').append(myImg);
+    myImg.innerHTML = "Image Element Added.";
 
-      toReplace.forEach((el)=>{
-        el.parentNode.replaceWith(span, toReplaceWith);
-        el.innerText="this is replaced info.";
-      })
-      
 
+   
+   
 
+    //     1. Add a script tag to the bottom.
+    // 2. Change the body style so it has a font - family of "Arial, sans-serif".
+    // 3. Replace each of the spans(nickname, favorites, hometown) with your own information.
+    // 4. Iterate through each li and change the class to "listitem".Add a style tag that sets a rule for "listitem" to make the color red.
+    // 5. Create a new img element and set its src attribute to a picture of you.Append that element to the page.
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
