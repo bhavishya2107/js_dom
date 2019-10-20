@@ -314,3 +314,24 @@ quotes = [
         "quoteText": "Great talent finds happiness in execution."
     }
 ];
+
+
+// function myFunction() {
+//     x = document.getElementById("demo")
+//     x.innerHTML = numbers.map(Math.sqrt);
+//   }
+
+// quotes.map((quote)=>{
+
+//    document.addEventListener('keyup',()=>{
+//        var h1 = document.querySelector('h1');
+//        var p = document.querySelector('p');
+
+//        h1.innerText = `${quote.quoteAuthor}`;
+//        p.innerText = `${quote.quoteText}`;
+//        console.log(h1);
+       
+//    })
+// });
+
+

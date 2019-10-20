@@ -15,7 +15,9 @@ var thirdListInOL = document.querySelector('ol > .third');
 
 
 //Give the section with an id of container the text "Hello!".
-sectionSelect.innerText = "Hello!";
+
+
+// sectionSelect.innerText = "Hello!";
 
 
 //Add the class main to the div with a class of footer.
